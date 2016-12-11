@@ -1,1 +1,1 @@
-# deep-server-side-tranclator
+# deep-server-side-translator
