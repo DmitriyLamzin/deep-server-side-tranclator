@@ -1,0 +1,8 @@
+rootProject.name = 'deep-server-side-translator'
+
+include 'elastic-filler'
+include 'docker-launcher'
+include 'redis-filler'
+include 'translator'
+include 'translator-dto'
+
