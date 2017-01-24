@@ -35,7 +35,7 @@ public class JobsLauncher {
   @Autowired
   private BitcoinQueue bitcoinQueue;
 
-  @Scheduled(fixedDelay = 3000)
+  @Scheduled(fixedDelay = 30000)
   public void launch() throws JobParametersInvalidException,
           JobExecutionAlreadyRunningException,
           JobRestartException,

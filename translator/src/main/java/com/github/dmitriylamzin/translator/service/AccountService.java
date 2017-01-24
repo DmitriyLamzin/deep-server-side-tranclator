@@ -60,7 +60,7 @@ public class AccountService implements Observer {
     findMatches();
   }
 
-  @Scheduled(fixedDelay = 3000)
+  @Scheduled(fixedDelay = 30000)
   public void findMatchesBySchedule() {
     if (accounts.size() == 0) {
       countsOfEmptyAccountsQueueCalls++;
@@ -70,8 +70,8 @@ public class AccountService implements Observer {
       countsOfEmptyAccountsQueueCalls = 0;
       findMatches();
     }
-    if (countsOfEmptyAccountsQueueCalls >= 10) {
-      LOGGER.info("No data during 10 periods, suppose that data is finished");
+    if (countsOfEmptyAccountsQueueCalls >= 5) {
+      LOGGER.info("No data during 5 periods, suppose that data is finished");
       LOGGER.info("Closing all dockers");
       dockerLauncher.stopAllContainers();
       System.exit(0);
