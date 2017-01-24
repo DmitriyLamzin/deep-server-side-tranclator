@@ -27,22 +27,12 @@ public class RedisBitcoinWriter implements ItemWriter<Bitcoin>, ItemWriteListene
   @Autowired
   private RedisTemplate redisTemplate;
 
-
-  @Override
-  public void beforeWrite(List<? extends Bitcoin> items) {
-  }
-
   @Override
   public void afterWrite(List<? extends Bitcoin> items) {
     stepExecution.setTerminateOnly();
 
     stepExecution.setStatus(BatchStatus.COMPLETED);
     stepExecution.setExitStatus(ExitStatus.COMPLETED);
-  }
-
-  @Override
-  public void onWriteError(Exception exception, List<? extends Bitcoin> items) {
-
   }
 
   @Override
@@ -57,6 +47,14 @@ public class RedisBitcoinWriter implements ItemWriter<Bitcoin>, ItemWriteListene
   public void beforeStep(StepExecution stepExecution) {
     this.stepExecution = stepExecution;
 
+  }
+
+  @Override
+  public void beforeWrite(List<? extends Bitcoin> items) {
+  }
+
+  @Override
+  public void onWriteError(Exception exception, List<? extends Bitcoin> items) {
   }
 
   @Override

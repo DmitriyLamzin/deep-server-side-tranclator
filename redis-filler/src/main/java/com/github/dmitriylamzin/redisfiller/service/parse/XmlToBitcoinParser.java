@@ -31,7 +31,6 @@ public class XmlToBitcoinParser {
       XMLEventReader eventReader =
               factory.createXMLEventReader(
                       new FileReader(xmlFile));
-
       while(eventReader.hasNext()){
         XMLEvent event = eventReader.nextEvent();
         switch(event.getEventType()){
