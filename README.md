@@ -1,6 +1,6 @@
 # deep-server-side-translator
 
-Перед вами архитектура приложения
+Application structure:
 
 ![alt tag](http://oi67.tinypic.com/dczlt0.jpg)
 
